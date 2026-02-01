@@ -26,12 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // CORS
-app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://yourdomain.com'] 
-    : ['http://localhost:3000'],
-  credentials: true
-}));
+app.use(cors());
 
 // Routes
 app.use('/api/auth', authRoutes);
